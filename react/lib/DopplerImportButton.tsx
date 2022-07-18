@@ -1,4 +1,6 @@
 import { utils, encryption } from "@doppler/import-button-core";
+import Logo from "./assets/Logo";
+import ImportSVG from "./assets/ImportText";
 import ButtonStyles from "./assets/ButtonStyles";
 import ReactShadow from "./util/ReactShadow";
 
@@ -34,7 +36,8 @@ export function DopplerImportButton({ secretName, secretValue }: DopplerImportBu
     <ReactShadow>
       <ButtonStyles />
       <button className="doppler-btn" type="button" onClick={triggerImport}>
-        Import
+        <Logo />
+        <ImportSVG />
       </button>
     </ReactShadow>
   );
