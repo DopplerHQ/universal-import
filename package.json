@@ -3,7 +3,8 @@
   "private": true,
   "workspaces": [
     "core",
-    "react"
+    "react",
+    "react-example"
   ],
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
