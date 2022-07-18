@@ -1,0 +1,19 @@
+{
+  "name": "@doppler/import-button-core",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf ./dist tsconfig.tsbuildinfo",
+    "build": "tsc",
+    "build:watch": "tsc --watch --preserveWatchOutput"
+  },
+  "dependencies": {
+    "tweetnacl-sealedbox-js": "^1.2.0",
+    "tweetnacl-util": "^0.15.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
