@@ -1,4 +1,6 @@
 import { utils, encryption } from "@doppler/import-button-core";
+import ButtonStyles from "./assets/ButtonStyles";
+import ReactShadow from "./util/ReactShadow";
 
 const DOPPLER_URL = "https://dashboard.dopplerlocal.com:3030";
 
@@ -29,8 +31,11 @@ export function DopplerImportButton({ secretName, secretValue }: DopplerImportBu
   }
 
   return (
-    <button className="doppler-btn" type="button" onClick={triggerImport}>
-      Import
-    </button>
+    <ReactShadow>
+      <ButtonStyles />
+      <button className="doppler-btn" type="button" onClick={triggerImport}>
+        Import
+      </button>
+    </ReactShadow>
   );
 }
