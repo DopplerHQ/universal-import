@@ -2,7 +2,8 @@
   "name": "@doppler/import-button",
   "private": true,
   "workspaces": [
-    "core"
+    "core",
+    "react"
   ],
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
