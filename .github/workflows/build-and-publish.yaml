@@ -1,0 +1,37 @@
+name: Doppler Import Button Build
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build-production:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: "NPM Install"
+        run: "npm ci"
+
+      - name: "Build Packages 🔧"
+        env:
+          VITE_DOPPLER_DASHBOARD_URL: ${{ secrets.VITE_DOPPLER_DASHBOARD_URL }}
+          UNIVERSAL_IMPORT_KEYS_URL: ${{ secrets.UNIVERSAL_IMPORT_KEYS_URL }}
+        # We have a specific github action npm script because the environment variables will already be present via github action secrets
+        run: "npm run build:github-action"
+
+        # Running Check Lint after build allows it to resolve the workspace imports
+      - name: "Check Lint"
+        run: npm run check | tee ./linter-report.txt
+
+      - name: "Publish to NPM Dry Run"
+        run: "npm publish --workspaces --dry-run"
+
+      - name: "Publish to NPM"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: "npm publish --workspaces"
