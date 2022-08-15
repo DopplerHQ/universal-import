@@ -36,8 +36,10 @@ export function DopplerImportButton({ secretName, secretValue }: DopplerImportBu
     <ReactShadow>
       <ButtonStyles />
       <button className="doppler-btn" type="button" onClick={triggerImport}>
+        <div className="doppler-gradient"></div>
+        <div className="doppler-gradient-hover"></div>
         <Logo />
-        <ImportSVG />
+        <ImportSVG className="import-svg" />
       </button>
     </ReactShadow>
   );
