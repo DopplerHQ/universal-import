@@ -17,7 +17,8 @@
     "outDir": "dist",
     "emitDeclarationOnly": true,
     "declaration": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "types": ["vite/client"]
   },
   "references": [{ "path": "../core" }, { "path": "./tsconfig.node.json" }]
 }

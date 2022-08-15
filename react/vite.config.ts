@@ -24,7 +24,6 @@ export default defineConfig({
       external: ["react", "react-dom"],
     },
   },
-  // ts-ignore
   plugins: [
     react(),
     dts({

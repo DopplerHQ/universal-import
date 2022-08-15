@@ -4,7 +4,7 @@ import ImportSVG from "./assets/ImportText";
 import ButtonStyles from "./assets/ButtonStyles";
 import ReactShadow from "./util/ReactShadow";
 
-const DOPPLER_URL = "https://dashboard.dopplerlocal.com:3030";
+const DOPPLER_DASHBOARD_URL = import.meta.env.VITE_DOPPLER_DASHBOARD_URL;
 
 // We'll trigger fetching the key info *outside* of the React component itself so that we:
 // 1. Only fetch the key once, regardless of how many times the button will be rendered
@@ -15,7 +15,7 @@ function openImportTab(payload: string, keyId: string) {
   const params = new URLSearchParams();
   params.set("payload", payload);
   params.set("keyId", keyId);
-  window.open(`${DOPPLER_URL}/import?${params.toString()}`, "_blank", "width=800,height=800");
+  window.open(`${DOPPLER_DASHBOARD_URL}/import?${params.toString()}`, "_blank", "width=800,height=800");
 }
 
 interface DopplerImportButtonProps {

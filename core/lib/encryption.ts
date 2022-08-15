@@ -1,8 +1,7 @@
 import { seal } from "tweetnacl-sealedbox-js";
 import { encodeBase64, decodeBase64 } from "tweetnacl-util";
 
-const DOPPLER_UNIVERSAL_KEY_URL = "https://keys.doppler.life/universal-import/latest.json";
-
+const DOPPLER_UNIVERSAL_KEY_URL = "REPLACE_POST_COMPILE_DOPPLER_UNIVERSAL_KEY_URL";
 export interface KeyInfo {
   keyId: string;
   publicKey: Uint8Array;
