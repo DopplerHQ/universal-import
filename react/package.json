@@ -1,5 +1,5 @@
 {
-  "name": "@doppler/import-button-react",
+  "name": "@dopplerhq/universal-import-react",
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,7 +14,7 @@
     "build": "tsc && doppler run --config prd -- vite build"
   },
   "dependencies": {
-    "@doppler/import-button-core": "file:../core"
+    "@dopplerhq/universal-import-core": "file:../core"
   },
   "peerDependencies": {
     "react": "^18.2.0",

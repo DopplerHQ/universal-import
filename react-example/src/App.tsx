@@ -1,5 +1,5 @@
 import React from "react";
-import DopplerImportButton from "@doppler/import-button-react";
+import DopplerImportButton from "@dopplerhq/universal-import-react";
 import "./App.css";
 
 const secrets = [

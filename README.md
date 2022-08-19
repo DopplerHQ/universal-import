@@ -1,4 +1,4 @@
-# @doppler/import-button
+# @dopplerhq/import-button
 
 ## NPM scripts from the root of this repository
 

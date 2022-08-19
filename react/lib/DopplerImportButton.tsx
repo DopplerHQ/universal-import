@@ -1,4 +1,4 @@
-import { utils, encryption } from "@doppler/import-button-core";
+import { utils, encryption } from "@dopplerhq/universal-import-core";
 import Logo from "./assets/Logo";
 import ImportSVG from "./assets/ImportText";
 import ButtonStyles from "./assets/ButtonStyles";

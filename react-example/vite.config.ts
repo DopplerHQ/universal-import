@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import { visualizer } from "rollup-plugin-visualizer";
 
@@ -9,5 +9,5 @@ export default defineConfig({
     host: "0.0.0.0",
     port: 4000,
   },
-  plugins: [react(), visualizer()],
+  plugins: [react(), visualizer() as Plugin],
 });

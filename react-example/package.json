@@ -1,5 +1,5 @@
 {
-  "name": "@doppler/react-example",
+  "name": "@dopplerhq/react-example",
   "private": true,
   "version": "1.0.0",
   "scripts": {
@@ -8,7 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@doppler/import-button-react": "file:../react",
+    "@dopplerhq/universal-import-react": "file:../react",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },

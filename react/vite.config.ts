@@ -1,5 +1,5 @@
 import * as path from "path";
-import { defineConfig } from "vite";
+import { defineConfig, Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import { visualizer } from "rollup-plugin-visualizer";
@@ -16,7 +16,7 @@ export default defineConfig({
     emptyOutDir: true,
     lib: {
       entry: path.resolve(__dirname, "lib/index.ts"),
-      name: "@doppler/import-button-react",
+      name: "@dopplerhq/universal-import-react",
       fileName: (format) => "index.js",
       formats: ["es"],
     },
@@ -29,6 +29,6 @@ export default defineConfig({
     dts({
       include: ["lib/index.ts", "lib/DopplerImportButton.tsx"],
     }),
-    visualizer(),
+    visualizer() as Plugin,
   ],
 });
