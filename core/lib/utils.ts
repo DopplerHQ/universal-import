@@ -1,10 +1,13 @@
-export function createPayload(secretName: string, secretValue: string) {
+export interface Secret {
+  name: string;
+  value: string;
+}
+
+export function createPayload(secrets: Secret[]) {
   return JSON.stringify({
-    secret: {
-      name: secretName,
-      value: secretValue,
-    },
+    secrets: secrets,
     timestamp: Date.now(),
+    version: 1,
   });
 }
 

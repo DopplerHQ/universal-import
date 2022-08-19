@@ -26,7 +26,8 @@ interface DopplerImportButtonProps {
 export function DopplerImportButton({ secretName, secretValue }: DopplerImportButtonProps) {
   async function triggerImport() {
     const resolvedKey = await keyInfoPromise;
-    const payload = utils.createPayload(secretName, secretValue);
+    const secrets = [{ name: secretName, value: secretValue }];
+    const payload = utils.createPayload(secrets);
     const encrypted = await encryption.encrypt(payload, resolvedKey);
     const base64URLSafe = utils.buildURLSafeBase64(encrypted);
     openImportTab(base64URLSafe, resolvedKey.keyId);
