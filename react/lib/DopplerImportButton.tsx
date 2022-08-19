@@ -15,6 +15,7 @@ function openImportTab(payload: string, keyId: string) {
   const params = new URLSearchParams();
   params.set("payload", payload);
   params.set("keyId", keyId);
+  // eslint-disable-next-line security/detect-non-literal-fs-filename
   window.open(`${DOPPLER_DASHBOARD_URL}/import?${params.toString()}`, "_blank", "width=800,height=800");
 }
 
