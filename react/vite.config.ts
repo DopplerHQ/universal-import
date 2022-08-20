@@ -22,7 +22,7 @@ export default defineConfig({
       formats: ["es"],
     },
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: ["react", "react-dom", "@dopplerhq/universal-import-core"],
     },
   },
   plugins: [
