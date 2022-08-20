@@ -18,7 +18,7 @@
     "build": "tsc && doppler run -- vite build"
   },
   "dependencies": {
-    "@dopplerhq/universal-import-core": "file:../core"
+    "@dopplerhq/universal-import-core": "*"
   },
   "peerDependencies": {
     "react": "^18.2.0",
