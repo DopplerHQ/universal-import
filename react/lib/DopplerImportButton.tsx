@@ -11,27 +11,32 @@ const DOPPLER_DASHBOARD_URL = import.meta.env.VITE_DOPPLER_DASHBOARD_URL;
 // 2. Fetch the key as soon as the button renders to remove delay in the onClick handler
 const keyInfoPromise = encryption.fetchKeyInfo();
 
-function openImportTab(payload: string, keyId: string) {
+function openImportTab(host: string, payload: string, keyId: string) {
   const params = new URLSearchParams();
   params.set("payload", payload);
   params.set("keyId", keyId);
   // eslint-disable-next-line security/detect-non-literal-fs-filename
-  window.open(`${DOPPLER_DASHBOARD_URL}/import?${params.toString()}`, "_blank", "width=800,height=800");
+  window.open(`${host}/import?${params.toString()}`, "_blank", "width=800,height=800");
 }
 
 interface DopplerImportButtonProps {
   secretName: string;
   secretValue: string;
+  host?: string;
 }
 
-export function DopplerImportButton({ secretName, secretValue }: DopplerImportButtonProps) {
+export function DopplerImportButton({
+  secretName,
+  secretValue,
+  host = DOPPLER_DASHBOARD_URL,
+}: DopplerImportButtonProps) {
   async function triggerImport() {
     const resolvedKey = await keyInfoPromise;
     const secrets = [{ name: secretName, value: secretValue }];
     const payload = utils.createPayload(secrets);
     const encrypted = await encryption.encrypt(payload, resolvedKey);
     const base64URLSafe = utils.buildURLSafeBase64(encrypted);
-    openImportTab(base64URLSafe, resolvedKey.keyId);
+    openImportTab(host, base64URLSafe, resolvedKey.keyId);
   }
 
   return (
