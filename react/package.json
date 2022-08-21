@@ -14,7 +14,7 @@
     "build:dev": "tsc && doppler run --config dev -- vite build",
     "build:staging": "tsc && doppler run --config stg -- vite build",
     "build:github-action": "tsc && vite build",
-    "build": "tsc && doppler run --config prd -- vite build"
+    "build": "tsc && doppler run -- vite build"
   },
   "dependencies": {
     "@dopplerhq/universal-import-core": "file:../core"
