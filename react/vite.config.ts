@@ -13,6 +13,7 @@ export default defineConfig({
   },
   build: {
     outDir: "dist/",
+    sourcemap: true,
     emptyOutDir: true,
     lib: {
       entry: path.resolve(__dirname, "lib/index.ts"),
@@ -21,7 +22,7 @@ export default defineConfig({
       formats: ["es"],
     },
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: ["react", "react-dom", "@dopplerhq/universal-import-core"],
     },
   },
   plugins: [

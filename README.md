@@ -1,6 +1,13 @@
-# @dopplerhq/import-button
+# @dopplerhq/universal-import
 
-## NPM scripts from the root of this repository
+This monorepo holds all Doppler Universal Import packages. Users will generally not want to consume this
+directly - instead, you should install one of the following child packages:
+
+- [@dopplerhq/universal-import-react](./react)
+
+### Development scripts
+
+These scripts are used for development of the Doppler Universal Import button components.
 
 | NPM Script                    | Description                                                              |
 | ----------------------------- | ------------------------------------------------------------------------ |
@@ -9,28 +16,9 @@
 | `npm run build`               | Generates production builds for all workspaces                           |
 | `npm run build:github-action` | Generates production builds for all workspaces (only for github actions) |
 
-## Doppler CLI and ENV/Secret Injection
+### Required environment variables
 
-`VITE_DOPPLER_DASHBOARD_URL` must be set as an environment variable for the `react` package
-`UNIVERSAL_IMPORT_KEYS_URL` must be set for post compilation replacement of static values in the `core` package.
+This project leverages the Doppler CLI to inject the following environment variables:
 
-This project leverages the doppler cli to retrieve those values from our `universal-import-button-build` project for the given environment
-
-## How to use the universal import button (react)
-
-In your react project run:
-`npm install @dopplerhq/universal-import-react`
-
-In your `.tsx` file where you want the import button:
-
-```jsx
-import DopplerImportButton from "@dopplerhq/universal-import-react";
-
-...
-
-return (
-    <>
-        <DopplerImportButton secretName={"secret_name"} secretValue={"secret_value"} />
-    </>
-)
-```
+- `VITE_DOPPLER_DASHBOARD_URL` must be set as an environment variable for the `react` package.
+- `UNIVERSAL_IMPORT_KEYS_URL` must be set for post compilation replacement of static values in the `core` package.

@@ -1,6 +1,6 @@
 {
   "name": "@dopplerhq/universal-import-react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "Apache-2.0",
@@ -14,10 +14,11 @@
     "build:dev": "tsc && doppler run --config dev -- vite build",
     "build:staging": "tsc && doppler run --config stg -- vite build",
     "build:github-action": "tsc && vite build",
-    "build": "tsc && doppler run --config prd -- vite build"
+    "build:docker": "tsc && doppler run --preserve-env -- vite build",
+    "build": "tsc && doppler run -- vite build"
   },
   "dependencies": {
-    "@dopplerhq/universal-import-core": "file:../core"
+    "@dopplerhq/universal-import-core": "*"
   },
   "peerDependencies": {
     "react": "^18.2.0",

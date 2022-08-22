@@ -1,0 +1,5 @@
+services:
+  universal-import:
+    - key: DOPPLER_TOKEN
+      secret: true
+      # value: "" # ENTER THE SERVICE TOKEN INTO THE RELEASE DASHBOARD ON APP CREATION
