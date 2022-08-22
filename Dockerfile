@@ -3,9 +3,6 @@ FROM node:16-alpine as build
 # Set workplace directory
 WORKDIR /usr/src/app
 
-# Install bash
-RUN apk add --no-cache bash
-
 # Copy code
 COPY . .
 
@@ -23,6 +20,9 @@ COPY --from=build /usr/src/app .
 
 # Install tini
 RUN apk add --no-cache tini
+
+# Install bash (Needed for correct sed substitution)
+RUN apk add --no-cache bash
 
 # Install Doppler CLI
 RUN set -e; \
