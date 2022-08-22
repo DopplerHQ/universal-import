@@ -4,6 +4,9 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "license": "Apache-2.0",
   "scripts": {
     "clean": "rm -rf ./dist tsconfig.tsbuildinfo",

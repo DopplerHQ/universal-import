@@ -28,7 +28,6 @@ export default function ButtonStyles() {
         width: 100%;
         height: 100%;
         opacity: 1;
-        z-index: -2;
         background: linear-gradient(216.71deg, #4F80FF 6.72%, #7A4BFF 91.2%);
         transition: all .2s ease-in-out;
       }
@@ -42,13 +41,16 @@ export default function ButtonStyles() {
         min-height: 100%;
         width: 100%;
         height: 100%;
-        z-index: -1;
         background: linear-gradient(216.71deg, #2375F3 6.72%, #7C1FF4 91.2%);
         transition: all .2s ease-in-out;
       }
 
       .doppler-btn:hover .doppler-gradient-hover {
         opacity: 1;
+      }
+
+      svg {
+        z-index: 1;
       }
 
       .import-svg {
