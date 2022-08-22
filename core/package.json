@@ -7,10 +7,10 @@
   "license": "Apache-2.0",
   "scripts": {
     "clean": "rm -rf ./dist tsconfig.tsbuildinfo",
-    "build:watch": "tsc-watch --preserveWatchOutput --onSuccess 'doppler run --config dev -- ./post-build.sh'",
-    "build:staging": "tsc && doppler run --config stg -- ./post-build.sh",
-    "build:github-action": "tsc && ./post-build.sh",
-    "build": "tsc && doppler run --config prd -- ./post-build.sh"
+    "build:watch": "tsc-watch --preserveWatchOutput --onSuccess 'doppler run --config dev -- sh ./post-build.sh'",
+    "build:staging": "tsc && doppler run --config stg -- sh ./post-build.sh",
+    "build:github-action": "tsc && sh ./post-build.sh",
+    "build": "tsc && doppler run -- sh ./post-build.sh"
   },
   "dependencies": {
     "tweetnacl-sealedbox-js": "^1.2.0",

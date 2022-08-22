@@ -1,0 +1,61 @@
+app: universal-import
+auto_deploy: true
+context: release-customer-us-west-2
+domain: rls.sh
+repo_name: dopplerhq/universal-import
+rules:
+  - service: universal-import
+    hostnames:
+      - import-${env_id}.${domain}
+    path: "/"
+environment_templates:
+  - name: ephemeral
+resources:
+  cpu:
+    limits: 2000m
+    requests: 150m
+  memory:
+    limits: 1Gi
+    requests: 150Mi
+  replicas: 1
+services:
+  - name: universal-import
+    image: doppler/universal-import
+    build:
+      dockerfile: "./Dockerfile"
+      context: "."
+    has_repo: true
+    static: false
+    ports:
+      # Node ports are only accessible to the internet
+      # https://docs.releasehub.com/reference-documentation/application-settings/application-template/schema-definition#ports
+      - type: node_port
+        port: "4000"
+    readiness_probe:
+      http_get:
+        path: "/"
+        port: 4000
+      initial_delay_seconds: 10
+      period_seconds: 3
+      success_threshold: 2
+      failure_threshold: 2
+    liveness_probe:
+      http_get:
+        path: "/"
+        port: 4000
+      initial_delay_seconds: 60
+      timeout_seconds: 2
+      period_seconds: 5
+      failure_threshold: 2
+workflows:
+  - name: setup
+    order_from:
+      - services.all
+  - name: patch
+    order_from:
+      - services.all
+  - name: teardown
+    parallelize:
+      - step: remove_environment
+        tasks:
+          - release.remove_environment
