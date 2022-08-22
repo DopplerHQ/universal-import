@@ -1,6 +1,6 @@
 {
   "name": "@dopplerhq/universal-import",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "license": "Apache-2.0",
   "workspaces": [
