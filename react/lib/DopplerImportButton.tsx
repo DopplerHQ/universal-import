@@ -15,8 +15,32 @@ function openImportTab(payload: string, keyId: string) {
   const params = new URLSearchParams();
   params.set("payload", payload);
   params.set("keyId", keyId);
+  openWindow(`${DOPPLER_DASHBOARD_URL}/import?${params.toString()}`, 800, 800);
+}
+
+function openWindow(url: string, windowWidth: number, windowHeight: number) {
+  // Fixes dual-screen position Most browsers  Firefox
+  const dualScreenLeft = window.screenLeft ?? window.screenX;
+  const dualScreenTop = window.screenTop ?? window.screenY;
+
+  const width = window.innerWidth ?? document.documentElement.clientWidth ?? screen.width;
+  const height = window.innerHeight ?? document.documentElement.clientHeight ?? screen.height;
+
+  const systemZoom = width / window.screen.availWidth;
+  const left = (width - windowWidth) / 2 / systemZoom + dualScreenLeft;
+  const top = (height - windowHeight) / 2 / systemZoom + dualScreenTop;
+
   // eslint-disable-next-line security/detect-non-literal-fs-filename
-  window.open(`${DOPPLER_DASHBOARD_URL}/import?${params.toString()}`, "_blank", "width=800,height=800");
+  window.open(
+    url,
+    "_blank",
+    `
+    width=${windowWidth / systemZoom},
+    height=${windowHeight / systemZoom},
+    top=${top},
+    left=${left}
+    `,
+  );
 }
 
 interface DopplerImportButtonProps {
