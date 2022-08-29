@@ -1,5 +1,7 @@
-import { seal } from "tweetnacl-sealedbox-js";
-import { encodeBase64, decodeBase64 } from "tweetnacl-util";
+import tweetnacl from "tweetnacl-util";
+import tweetnaclSealedbox from "tweetnacl-sealedbox-js";
+const { encodeBase64, decodeBase64 } = tweetnacl;
+const { seal } = tweetnaclSealedbox;
 
 const DOPPLER_UNIVERSAL_KEY_URL = "REPLACE_POST_COMPILE_DOPPLER_UNIVERSAL_KEY_URL";
 export interface KeyInfo {
