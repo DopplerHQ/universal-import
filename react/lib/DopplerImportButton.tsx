@@ -61,7 +61,7 @@ export function DopplerImportButton(props: DopplerImportButtonProps) {
   return (
     <ReactShadow>
       <ButtonStyles height={height} width={width} />
-      <button className="doppler-btn" type="button" onClick={triggerImport}>
+      <button className="doppler-btn" type="button" onClick={triggerImport} title="Import to Doppler">
         <div className="doppler-gradient"></div>
         <div className="doppler-gradient-hover"></div>
         <Logo height={height} />
