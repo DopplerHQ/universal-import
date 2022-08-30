@@ -19,24 +19,18 @@ function openImportTab(payload: string, keyId: string) {
 }
 
 function openWindow(url: string, windowWidth: number, windowHeight: number) {
-  // Fixes dual-screen position Most browsers  Firefox
-  const dualScreenLeft = window.screenLeft ?? window.screenX;
-  const dualScreenTop = window.screenTop ?? window.screenY;
-
-  const width = window.innerWidth ?? document.documentElement.clientWidth ?? screen.width;
-  const height = window.innerHeight ?? document.documentElement.clientHeight ?? screen.height;
-
-  const systemZoom = width / window.screen.availWidth;
-  const left = (width - windowWidth) / 2 / systemZoom + dualScreenLeft;
-  const top = (height - windowHeight) / 2 / systemZoom + dualScreenTop;
+  const width = window.innerWidth ?? document.documentElement.clientWidth ?? document.body.clientWidth;
+  const height = window.innerHeight ?? document.documentElement.clientHeight ?? document.body.clientHeight;
+  const left = (width - windowWidth) / 2;
+  const top = (height - windowHeight) / 2;
 
   // eslint-disable-next-line security/detect-non-literal-fs-filename
   window.open(
     url,
     "_blank",
     `
-    width=${windowWidth / systemZoom},
-    height=${windowHeight / systemZoom},
+    width=${windowWidth},
+    height=${windowHeight},
     top=${top},
     left=${left}
     `,

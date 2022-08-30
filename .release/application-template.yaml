@@ -1,7 +1,7 @@
 app: universal-import
 auto_deploy: true
-context: release-customer-us-west-2
-domain: rls.sh
+context: release-vdgedm
+domain: preview.doppler.team
 repo_name: dopplerhq/universal-import
 rules:
   - service: universal-import
