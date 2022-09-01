@@ -40,9 +40,12 @@ function openWindow(url: string, windowWidth: number, windowHeight: number) {
 interface DopplerImportButtonProps {
   secretName: string;
   secretValue: string;
+  height?: number;
 }
 
-export function DopplerImportButton({ secretName, secretValue }: DopplerImportButtonProps) {
+export function DopplerImportButton(props: DopplerImportButtonProps) {
+  const { secretName, secretValue } = props;
+
   async function triggerImport() {
     const resolvedKey = await keyInfoPromise;
     const secrets = [{ name: secretName, value: secretValue }];
@@ -52,14 +55,17 @@ export function DopplerImportButton({ secretName, secretValue }: DopplerImportBu
     openImportTab(base64URLSafe, resolvedKey.keyId);
   }
 
+  const height = Math.max(props.height ?? 32, 24);
+  const width = height * 2;
+
   return (
     <ReactShadow>
-      <ButtonStyles />
-      <button className="doppler-btn" type="button" onClick={triggerImport}>
+      <ButtonStyles height={height} width={width} />
+      <button className="doppler-btn" type="button" onClick={triggerImport} title="Import to Doppler">
         <div className="doppler-gradient"></div>
         <div className="doppler-gradient-hover"></div>
-        <Logo />
-        <ImportSVG className="import-svg" />
+        <Logo height={height} />
+        <ImportSVG height={height} />
       </button>
     </ReactShadow>
   );

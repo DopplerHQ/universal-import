@@ -1,4 +1,9 @@
-export default function ButtonStyles() {
+type ButtonStylesProps = {
+  height: number;
+  width: number;
+};
+
+export default function ButtonStyles(props: ButtonStylesProps) {
   return (
     <style>
       {`
@@ -7,16 +12,17 @@ export default function ButtonStyles() {
         border: unset;
         display: flex;
         position: relative;
-        justify-content: space-evenly;
         align-items: center;
+        justify-content: center;
         flex-shrink: 0;
-        width: 92px;
-        height: 35px;
+        width: ${props.width}px;
+        height: ${props.height}px;
         font-weight: 700;
         color: #fff;
-        border-radius: 3px;
+        border-radius: ${props.height / 9}px;
         cursor: pointer;
         overflow: hidden;
+        padding: 0 ${props.height / 4}px;
       }
 
       .doppler-gradient {
@@ -51,11 +57,6 @@ export default function ButtonStyles() {
 
       svg {
         z-index: 1;
-      }
-
-      .import-svg {
-        margin-top: 2px;
-        height: 13px;
       }
     `}
     </style>

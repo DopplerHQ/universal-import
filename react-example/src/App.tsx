@@ -202,7 +202,7 @@ export default function Dashboard() {
                         Scope
                       </th>
                       <th className="px-4 py-3" style={{ width: 210 }}>
-                        Created
+                        Button
                       </th>
                     </tr>
                   </thead>
@@ -222,8 +222,12 @@ export default function Dashboard() {
                         </span>
                       </td>
                       <td className="px-4 py-3 text-sm flex items-center align-right">
-                        <span className="mr-6">6/10/2020</span>
-                        <DopplerImportButton secretName="PROD_PAYMENT_PROCESSING" secretValue={nanoid()} />
+                        <span className="mr-6">24px</span>
+                        <DopplerImportButton
+                          secretName="PROD_PAYMENT_PROCESSING"
+                          secretValue={nanoid()}
+                          height={24}
+                        />
                       </td>
                     </tr>
 
@@ -242,8 +246,12 @@ export default function Dashboard() {
                         </span>
                       </td>
                       <td className="px-4 py-3 text-sm flex items-center align-right">
-                        <span className="mr-6">6/10/2020</span>
-                        <DopplerImportButton secretName="PROD_CHARGEBACKS" secretValue={nanoid()} />
+                        <span className="mr-6">28px</span>
+                        <DopplerImportButton
+                          secretName="PROD_CHARGEBACKS"
+                          secretValue={nanoid()}
+                          height={28}
+                        />
                       </td>
                     </tr>
 
@@ -262,8 +270,8 @@ export default function Dashboard() {
                         </span>
                       </td>
                       <td className="px-4 py-3 text-sm flex items-center align-right">
-                        <span className="mr-6">6/10/2020</span>
-                        <DopplerImportButton secretName="PROD_READ_ONLY" secretValue={nanoid()} />
+                        <span className="mr-6">30px</span>
+                        <DopplerImportButton secretName="PROD_READ_ONLY" secretValue={nanoid()} height={30} />
                       </td>
                     </tr>
                   </tbody>
@@ -286,7 +294,7 @@ export default function Dashboard() {
                         Scope
                       </th>
                       <th className="px-4 py-3" style={{ width: 210 }}>
-                        Created
+                        Button
                       </th>
                     </tr>
                   </thead>
@@ -306,8 +314,12 @@ export default function Dashboard() {
                         </span>
                       </td>
                       <td className="px-4 py-3 text-sm flex items-center align-right">
-                        <span className="mr-6">6/10/2020</span>
-                        <DopplerImportButton secretName="TEST_PAYMENT_PROCESSING" secretValue={nanoid()} />
+                        <span className="mr-6">32px</span>
+                        <DopplerImportButton
+                          secretName="TEST_PAYMENT_PROCESSING"
+                          secretValue={nanoid()}
+                          height={32}
+                        />
                       </td>
                     </tr>
 
@@ -326,8 +338,12 @@ export default function Dashboard() {
                         </span>
                       </td>
                       <td className="px-4 py-3 text-sm flex items-center align-right">
-                        <span className="mr-6">6/10/2020</span>
-                        <DopplerImportButton secretName="TEST_CHARGEBACKS" secretValue={nanoid()} />
+                        <span className="mr-6">34px</span>
+                        <DopplerImportButton
+                          secretName="TEST_CHARGEBACKS"
+                          secretValue={nanoid()}
+                          height={34}
+                        />
                       </td>
                     </tr>
 
@@ -346,8 +362,32 @@ export default function Dashboard() {
                         </span>
                       </td>
                       <td className="px-4 py-3 text-sm flex items-center align-right">
-                        <span className="mr-6">6/10/2020</span>
-                        <DopplerImportButton secretName="TEST_READ_ONLY" secretValue={nanoid()} />
+                        <span className="mr-6">36px</span>
+                        <DopplerImportButton secretName="TEST_READ_ONLY" secretValue={nanoid()} height={36} />
+                      </td>
+                    </tr>
+
+                    <tr className="text-gray-700 dark:text-gray-400">
+                      <td className="px-4 py-3">
+                        <div className="flex items-center text-sm">
+                          <div>
+                            <p className="font-semibold">TEST_READ_ONLY_2</p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td className="px-4 py-3 text-xs">
+                        <span className="px-2 py-1 font-semibold leading-tight text-orange-700 bg-orange-100 rounded-full dark:text-white dark:bg-orange-600">
+                          Read
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 text-sm flex items-center align-right">
+                        <span className="mr-6">38px</span>
+                        <DopplerImportButton
+                          secretName="TEST_READ_ONLY_2"
+                          secretValue={nanoid()}
+                          height={38}
+                        />
                       </td>
                     </tr>
                   </tbody>

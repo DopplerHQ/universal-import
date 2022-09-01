@@ -35,7 +35,7 @@ services:
       http_get:
         path: "/"
         port: 4000
-      initial_delay_seconds: 10
+      initial_delay_seconds: 60
       period_seconds: 3
       success_threshold: 2
       failure_threshold: 2
