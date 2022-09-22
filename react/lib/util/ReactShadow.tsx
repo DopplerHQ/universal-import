@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect, PropsWithChildren } from "react";
 import { createPortal } from "react-dom";
 
-export default function ReactShadow(props: PropsWithChildren) {
+export default function ReactShadow(props: PropsWithChildren<any>) {
   const ref = useRef<HTMLDivElement>(null);
   const [shadowRoot, setShadowRoot] = useState<ShadowRoot>();
 
