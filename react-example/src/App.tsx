@@ -1,3 +1,4 @@
+import React from "react";
 import DopplerImportButton from "@dopplerhq/universal-import-react";
 import { nanoid } from "nanoid";
 
