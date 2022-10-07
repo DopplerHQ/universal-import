@@ -12,10 +12,10 @@ const DOPPLER_DASHBOARD_URL = import.meta.env.VITE_DOPPLER_DASHBOARD_URL;
 const keyInfoPromise = encryption.fetchKeyInfo();
 
 function openImportTab(payload: string, keyId: string) {
-  const params = new URLSearchParams();
-  params.set("payload", payload);
-  params.set("keyId", keyId);
-  openWindow(`${DOPPLER_DASHBOARD_URL}/import?${params.toString()}`, 800, 800);
+  const url = new URL("/import", DOPPLER_DASHBOARD_URL);
+  url.searchParams.set("payload", payload);
+  url.searchParams.set("keyId", keyId);
+  openWindow(url.toString(), 800, 800);
 }
 
 function openWindow(url: string, windowWidth: number, windowHeight: number) {
