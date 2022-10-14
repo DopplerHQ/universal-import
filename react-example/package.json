@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@dopplerhq/universal-import-react": "file:../react",
+    "@dopplerhq/universal-import-core": "file:../core",
     "nanoid": "^4.0.0",
     "react": "16.8.0",
     "react-dom": "16.8.0"

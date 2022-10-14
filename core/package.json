@@ -11,6 +11,7 @@
   "scripts": {
     "clean": "rm -rf ./dist tsconfig.tsbuildinfo",
     "build:watch": "tsc-watch --preserveWatchOutput --onSuccess 'doppler run --config dev -- bash ./post-build.sh'",
+    "build:dev": "tsc && doppler run --config dev -- bash ./post-build.sh",
     "build:staging": "tsc && doppler run --config stg -- bash ./post-build.sh",
     "build:github-action": "tsc && bash ./post-build.sh",
     "build": "tsc && doppler run -- bash ./post-build.sh"

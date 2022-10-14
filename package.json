@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "clean": "concurrently -i -c green,blue -n core,react 'cd core && npm run clean' 'cd react && npm run clean'",
-    "predev": "cd core && npm run build:staging && cd ../react && npm run build:dev",
+    "predev": "cd core && npm run build:dev && cd ../react && npm run build:dev",
     "dev": "concurrently -i -c green,blue,yellow -n core,react,react-example 'cd core && npm run build:watch' 'cd react && npm run build:watch' 'cd react-example && npm run dev'",
     "docker": "cd core && npm run build && cd ../react && npm run build:docker && cd ../react-example && npm run build && npm run preview",
     "build": "npm run clean && cd core && npm run build && cd ../react && npm run build",
