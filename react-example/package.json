@@ -1,7 +1,7 @@
 {
   "name": "@dopplerhq/react-example",
   "private": true,
-  "version": "0.0.8",
+  "version": "0.0.9",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@dopplerhq/universal-import-react": "file:../react",
+    "@dopplerhq/universal-import-core": "file:../core",
     "nanoid": "^4.0.0",
     "react": "16.8.0",
     "react-dom": "16.8.0"

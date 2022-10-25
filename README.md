@@ -3,6 +3,7 @@
 This monorepo holds all Doppler Universal Import packages. Users will generally not want to consume this
 directly - instead, you should install one of the following child packages:
 
+- [@dopplerhq/universal-import-core](./core)
 - [@dopplerhq/universal-import-react](./react)
 
 ### Development scripts
@@ -20,5 +21,5 @@ These scripts are used for development of the Doppler Universal Import button co
 
 This project leverages the Doppler CLI to inject the following environment variables:
 
-- `VITE_DOPPLER_DASHBOARD_URL` must be set as an environment variable for the `react` package.
+- `DOPPLER_DASHBOARD_URL` must be set as an environment variable for the `core` package.
 - `UNIVERSAL_IMPORT_KEYS_URL` must be set for post compilation replacement of static values in the `core` package.

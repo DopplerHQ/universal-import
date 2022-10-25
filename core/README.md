@@ -1,6 +1,21 @@
 # @dopplerhq/universal-import-core
 
-This package holds the core encryption logic that is used by the peer packages to securely import
-secrets into Doppler. Instead of interacting with this package directly, you most likely want to
-use one of the pre-built components for your app. You can find these by following one of the links
-from the [parent README file](../).
+This package holds the core logic used to trigger the import flow.
+
+### Installation
+
+`npm install @dopplerhq/universal-import-core`
+
+### Usage
+
+First, import the `DopplerImport` into your project:
+
+```js
+import { DopplerImport } from "@dopplerhq/universal-import-core";
+```
+
+Then call the `trigger()` method while providing the `secretName` and `secretValue` properties:
+
+```js
+await DopplerImport.trigger({ secretName: "STRIPE_KEY", secretValue: "sk_test_12345" });
+```

@@ -2,21 +2,25 @@ import tweetnacl from "tweetnacl-util";
 import tweetnaclSealedbox from "tweetnacl-sealedbox-js";
 const { encodeBase64, decodeBase64 } = tweetnacl;
 const { seal } = tweetnaclSealedbox;
-
 const DOPPLER_UNIVERSAL_KEY_URL = "REPLACE_POST_COMPILE_DOPPLER_UNIVERSAL_KEY_URL";
+let keyInfoPromise: Promise<KeyInfo>;
+
 export interface KeyInfo {
   keyId: string;
   publicKey: Uint8Array;
 }
 
 export async function fetchKeyInfo() {
-  const res = await fetch(DOPPLER_UNIVERSAL_KEY_URL);
-  const json = await res.json();
+  if (!keyInfoPromise) {
+    keyInfoPromise = fetch(DOPPLER_UNIVERSAL_KEY_URL)
+      .then((res) => res.json())
+      .then((json) => ({
+        keyId: json.keyId,
+        publicKey: decodeBase64(json.publicKey),
+      }));
+  }
 
-  return {
-    keyId: json.keyId,
-    publicKey: decodeBase64(json.publicKey),
-  };
+  return keyInfoPromise;
 }
 
 export async function encrypt(plainText: string, keyInfo: KeyInfo) {

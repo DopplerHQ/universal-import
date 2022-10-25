@@ -34,6 +34,6 @@ RUN set -e; \
 # Run on container startup
 ENTRYPOINT  if [ -n "$SERVER_INGRESS_URL" ]; then                                                             \
                 # If the app is being bundled with the Server app then set the override host                  \
-                export VITE_DOPPLER_DASHBOARD_URL="https://dashboard-${RELEASE_ENV_ID}.preview.doppler.team"; \
+                export DOPPLER_DASHBOARD_URL="https://dashboard-${RELEASE_ENV_ID}.preview.doppler.team"; \
             fi &&                                                                                             \
             tini -- npm run docker

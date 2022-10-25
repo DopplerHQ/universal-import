@@ -1,6 +1,10 @@
 import React from "react";
+import * as DopplerImport from "@dopplerhq/universal-import-core";
 import DopplerImportButton from "@dopplerhq/universal-import-react";
 import { nanoid } from "nanoid";
+
+// Expose the button so we can test the trigger method in the console
+(window as any).DopplerImport = DopplerImport;
 
 export default function Dashboard() {
   return (
