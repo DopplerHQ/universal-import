@@ -11,11 +11,13 @@ This package holds the core logic used to trigger the import flow.
 First, import the `DopplerImport` into your project:
 
 ```js
-import { DopplerImport } from "@dopplerhq/universal-import-core";
+import { trigger } from "@dopplerhq/universal-import-core";
 ```
 
-Then call the `trigger()` method while providing the `secretName` and `secretValue` properties:
+Then call the `trigger()` function while providing an object with the `secretName` and `secretValue` properties:
+
+import { trigger } from "@dopplerhq/universal-import-core";
 
 ```js
-await DopplerImport.trigger({ secretName: "STRIPE_KEY", secretValue: "sk_test_12345" });
+await trigger({ secretName: "STRIPE_KEY", secretValue: "sk_test_12345" });
 ```
