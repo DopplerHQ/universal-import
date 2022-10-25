@@ -19,7 +19,7 @@ jobs:
 
       - name: "Build Packages 🔧"
         env:
-          VITE_DOPPLER_DASHBOARD_URL: ${{ secrets.VITE_DOPPLER_DASHBOARD_URL }}
+          DOPPLER_DASHBOARD_URL: ${{ secrets.VITE_DOPPLER_DASHBOARD_URL }}
           UNIVERSAL_IMPORT_KEYS_URL: ${{ secrets.UNIVERSAL_IMPORT_KEYS_URL }}
         # We have a specific github action npm script because the environment variables will already be present via github action secrets
         run: "npm run build:github-action"
