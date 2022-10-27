@@ -3,6 +3,12 @@ export interface Secret {
   value: string;
 }
 
+export interface ImportPayload {
+  secrets: Secret[];
+  timestamp: number;
+  version: 1;
+}
+
 export function createPayload(secrets: Secret[]) {
   return JSON.stringify({
     secrets: secrets,
