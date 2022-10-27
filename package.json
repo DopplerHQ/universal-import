@@ -19,7 +19,9 @@
     "check": "concurrently -i -c green,blue -n eslint,prettier 'npm run lint' 'npm run prettier'",
     "lint": "eslint .",
     "prettier": "prettier . --check",
-    "version": "concurrently -i -c green,blue,yellow -n core,react,react-example 'cd core && npm version $VERSION' 'cd react && npm version $VERSION' 'cd react-example && npm version $VERSION'",
+    "version:patch": "npm version --workspaces patch",
+    "version:minor": "npm version --workspaces minor",
+    "version:major": "npm version --workspaces major",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:coverage:ci": "jest --ci --reporters=default --reporters=jest-junit"
