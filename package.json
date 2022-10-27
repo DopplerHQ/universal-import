@@ -19,9 +19,14 @@
     "check": "concurrently -i -c green,blue -n eslint,prettier 'npm run lint' 'npm run prettier'",
     "lint": "eslint .",
     "prettier": "prettier . --check",
-    "version": "concurrently -i -c green,blue,yellow -n core,react,react-example 'cd core && npm version $VERSION' 'cd react && npm version $VERSION' 'cd react-example && npm version $VERSION'"
+    "version": "concurrently -i -c green,blue,yellow -n core,react,react-example 'cd core && npm version $VERSION' 'cd react && npm version $VERSION' 'cd react-example && npm version $VERSION'",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "devDependencies": {
+    "@swc/core": "^1.3.11",
+    "@swc/jest": "^0.2.23",
+    "@types/jest": "^29.2.0",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
     "concurrently": "^7.3.0",
@@ -29,7 +34,9 @@
     "eslint-import-resolver-typescript": "^3.4.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-security": "^1.5.0",
-    "prettier": "^2.7.1"
+    "jest": "^29.2.2",
+    "prettier": "^2.7.1",
+    "ts-jest": "^29.0.3"
   },
   "prettier": {
     "arrowParens": "always",

@@ -21,3 +21,6 @@ dist
 
 # Any stats files generated from vizualizing built bundle
 **/stats.html
+
+# Jest coverage folder
+coverage
