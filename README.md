@@ -1,9 +1,22 @@
+![Built & Published](https://github.com/DopplerHQ/universal-import/actions/workflows/build-and-publish.yaml/badge.svg)
+![npm version](https://badgen.net/npm/v/@dopplerhq/universal-import-react)
+![npm downloads](https://badgen.net/npm/dm/@dopplerhq/universal-import-react?icon=npm)
+
 # @dopplerhq/universal-import
 
 This monorepo holds all Doppler Universal Import packages. Users will generally not want to consume this
 directly - instead, you should install one of the following child packages:
 
+### Core
+
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/@dopplerhq/universal-import-core)
+
 - [@dopplerhq/universal-import-core](./core)
+
+### React
+
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/@dopplerhq/universal-import-react)
+
 - [@dopplerhq/universal-import-react](./react)
 
 ### Development scripts
