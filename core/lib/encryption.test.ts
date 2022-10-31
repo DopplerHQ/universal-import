@@ -42,6 +42,7 @@ describe("encryption", () => {
             publicKey: key.publicKey,
           });
 
+          // eslint-disable-next-line security/detect-non-literal-fs-filename
           const decryptedCipherText = nacl.open(
             decodeBase64(base64EncodedCipherText),
             key.publicKey,
