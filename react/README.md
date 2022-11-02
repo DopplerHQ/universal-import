@@ -1,3 +1,5 @@
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/@dopplerhq/universal-import-react)
+
 # @dopplerhq/universal-import-react
 
 This package exposes a React component that you can use to easily and securely import secrets into Doppler.

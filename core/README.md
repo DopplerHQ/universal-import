@@ -1,3 +1,5 @@
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/@dopplerhq/universal-import-core)
+
 # @dopplerhq/universal-import-core
 
 This package holds the core logic used to trigger the import flow.

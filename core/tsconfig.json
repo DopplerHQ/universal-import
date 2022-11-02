@@ -3,5 +3,7 @@
   "compilerOptions": {
     "rootDir": "lib",
     "outDir": "dist"
-  }
+  },
+  "include": ["lib/*.ts"],
+  "exclude": ["lib/*.test.ts"]
 }
