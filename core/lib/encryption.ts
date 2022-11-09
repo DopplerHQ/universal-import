@@ -2,7 +2,6 @@ import tweetnacl from "tweetnacl-util";
 import tweetnaclSealedbox from "tweetnacl-sealedbox-js";
 const { encodeBase64, decodeBase64 } = tweetnacl;
 const { seal } = tweetnaclSealedbox;
-const DOPPLER_UNIVERSAL_KEY_URL = "REPLACE_POST_COMPILE_DOPPLER_UNIVERSAL_KEY_URL";
 let keyInfoPromise: Promise<KeyInfo>;
 
 export interface KeyInfo {
@@ -10,12 +9,12 @@ export interface KeyInfo {
   publicKey: Uint8Array;
 }
 
-export async function fetchKeyInfo() {
-  const url = new URL(DOPPLER_UNIVERSAL_KEY_URL);
+export async function fetchKeyInfo(keyURL: string) {
+  const url = new URL(keyURL);
   url.searchParams.append("cpv", "REPLACE_CORE_PACKAGE_VERSION");
 
   if (!keyInfoPromise) {
-    keyInfoPromise = fetch(DOPPLER_UNIVERSAL_KEY_URL)
+    keyInfoPromise = fetch(url.toString())
       .then((res) => res.json())
       .then((json) => ({
         keyId: json.keyId,
