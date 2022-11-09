@@ -11,6 +11,9 @@ export interface KeyInfo {
 }
 
 export async function fetchKeyInfo() {
+  const url = new URL(DOPPLER_UNIVERSAL_KEY_URL);
+  url.searchParams.append("cpv", "REPLACE_CORE_PACKAGE_VERSION");
+
   if (!keyInfoPromise) {
     keyInfoPromise = fetch(DOPPLER_UNIVERSAL_KEY_URL)
       .then((res) => res.json())
