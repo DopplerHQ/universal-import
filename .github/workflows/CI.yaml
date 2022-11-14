@@ -1,7 +1,7 @@
-name: "Tests and Coverage"
+name: "CI"
 on:
   - workflow_dispatch
-  - pull_request
+  - push
 
 # For Test Report Step
 permissions:
@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  build-test:
+  build-lint-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -21,6 +21,16 @@ jobs:
 
       - name: "Install Dependencies 📦"
         run: "npm ci"
+
+      - name: "Build Packages 🔧"
+        env:
+          DOPPLER_DASHBOARD_URL: ${{ secrets.VITE_DOPPLER_DASHBOARD_URL }}
+          UNIVERSAL_IMPORT_KEYS_URL: ${{ secrets.UNIVERSAL_IMPORT_KEYS_URL }}
+        # We have a specific github action npm script because the environment variables will already be present via github action secrets
+        run: "npm run build:github-action"
+
+      - name: "Run Linters 🔎"
+        run: "npm run check"
 
       - name: "Run Tests 🧪"
         run: "npm run test:coverage:ci"

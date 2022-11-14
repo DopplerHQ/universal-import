@@ -1,4 +1,4 @@
-name: Doppler Import Button Build
+name: Universal Import Build
 on:
   push:
     branches:
