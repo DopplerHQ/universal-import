@@ -17,7 +17,7 @@ describe("encryption", () => {
     const spy = jest.spyOn(global, "fetch");
     describe("Given fetchKeyInfo() is called", () => {
       test("Then it will return a promise containing the key information", async () => {
-        const res = fetchKeyInfo();
+        const res = fetchKeyInfo("https://keys.staging.doppler.com/universal-import/latest.json");
         expect(res).toHaveProperty("then");
         expect(spy).toHaveBeenCalled();
       });

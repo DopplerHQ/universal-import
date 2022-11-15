@@ -2,13 +2,14 @@ import * as encryption from "./encryption.js";
 import * as utils from "./utils.js";
 import * as modal from "./modal.js";
 
+const DOPPLER_UNIVERSAL_KEY_URL = "REPLACE_POST_COMPILE_DOPPLER_UNIVERSAL_KEY_URL";
 export interface DopplerImport {
   secretName: string;
   secretValue: string;
 }
 
 export async function fetchKeyInfo() {
-  return await encryption.fetchKeyInfo();
+  return await encryption.fetchKeyInfo(DOPPLER_UNIVERSAL_KEY_URL);
 }
 
 export async function trigger(props: DopplerImport) {

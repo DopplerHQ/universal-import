@@ -4,6 +4,7 @@ export function open(payload: string, keyId: string) {
   const url = new URL("/import", DOPPLER_DASHBOARD_URL);
   url.searchParams.set("payload", payload);
   url.searchParams.set("keyId", keyId);
+  url.searchParams.set("cpv", "REPLACE_CORE_PACKAGE_VERSION");
   openWindow(url.toString(), 800, 800);
 }
 

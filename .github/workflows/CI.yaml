@@ -22,6 +22,9 @@ jobs:
       - name: "Install Dependencies 📦"
         run: "npm ci"
 
+      - name: "Install jq"
+        run: sudo apt-get update -y && sudo apt-get install -y jq
+
       - name: "Build Packages 🔧"
         env:
           DOPPLER_DASHBOARD_URL: ${{ secrets.VITE_DOPPLER_DASHBOARD_URL }}
