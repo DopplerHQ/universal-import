@@ -5,15 +5,6 @@ import ButtonStyles from "./assets/ButtonStyles";
 import ReactShadow from "./util/ReactShadow";
 import { useEffect, useRef } from "react";
 
-const observer = new IntersectionObserver(([entry]) => {
-  // Start keyInfo fetch when one of the instances of the button
-  // is in the user's viewport and then disconnect the observer
-  if (entry.isIntersecting) {
-    fetchKeyInfo();
-    observer.disconnect();
-  }
-});
-
 interface DopplerImportButtonProps extends DopplerImport {
   height?: number;
 }
@@ -27,6 +18,14 @@ export function DopplerImportButton(props: DopplerImportButtonProps) {
   const reference = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      // Start keyInfo fetch when one of the instances of the button
+      // is in the user's viewport and then disconnect the observer
+      if (entry.isIntersecting) {
+        fetchKeyInfo();
+        observer.disconnect();
+      }
+    });
     const button = reference.current;
 
     if (button === null) {
