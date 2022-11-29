@@ -2,7 +2,12 @@
 
 # @dopplerhq/universal-import-core
 
-This package holds the core logic used to trigger the import flow.
+This package contains the core logic that is leveraged by the `@dopplerhq/universal-import-react` package. It is responsible for:
+
+- Fetching the latest public encryption key
+- Encrypting the payload with the public key via [sealed boxes](https://doc.libsodium.org/public-key_cryptography/sealed_boxes)
+- Triggering the Universal Import flow so that the user can import the secret
+- Exposing the `trigger` function to trigger the Universal Import flow without leveraging one of our frontend packages
 
 ### Installation
 
@@ -10,16 +15,10 @@ This package holds the core logic used to trigger the import flow.
 
 ### Usage
 
-First, import the `DopplerImport` into your project:
+Add the following to your code to leverage this package via the `trigger(...)` function:
 
 ```js
 import { trigger } from "@dopplerhq/universal-import-core";
-```
-
-Then call the `trigger()` function while providing an object with the `secretName` and `secretValue` properties:
-
-import { trigger } from "@dopplerhq/universal-import-core";
-
-```js
+//...
 await trigger({ secretName: "STRIPE_KEY", secretValue: "sk_test_12345" });
 ```

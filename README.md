@@ -2,6 +2,18 @@
 ![npm version](https://badgen.net/npm/v/@dopplerhq/universal-import-react)
 ![npm downloads](https://badgen.net/npm/dm/@dopplerhq/universal-import-react?icon=npm)
 
+<div align="center">
+    <a href="https://doppler.com?utm_campaign=github_repo&utm_medium=referral&utm_content=universal-import&utm_source=github">
+        <img src="https://user-images.githubusercontent.com/2602652/202788801-0ed64dce-b645-4877-b748-6189186062cd.png" width="260" alt="Doppler">
+    </a>
+</div>
+
+# Universal Import
+
+Use Universal Import to push secrets directly to engineering services and production infrastructure with the click of a button.
+
+Interested in becoming a Universal Import partner? Visit the [Universal Import Hub](https://www.doppler.com/import) for more information and to follow the download and installation steps. There you will also find additional information on how it works for the end user alongside FAQs.
+
 # @dopplerhq/universal-import
 
 This monorepo holds all Doppler Universal Import packages. Users will generally not want to consume this
@@ -21,7 +33,7 @@ directly - instead, you should install one of the following child packages:
 
 ### Development scripts
 
-These scripts are used for development of the Doppler Universal Import button components.
+These scripts are used for the development of the Doppler Universal Import button components.
 
 | NPM Script                    | Description                                                              |
 | ----------------------------- | ------------------------------------------------------------------------ |
