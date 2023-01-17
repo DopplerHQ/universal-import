@@ -12,8 +12,18 @@ export async function fetchKeyInfo() {
   return await encryption.fetchKeyInfo(DOPPLER_UNIVERSAL_KEY_URL);
 }
 
+const secretNameRegex = /^[A-Z_]+[A-Z0-9_]*$/;
+export function validateSecretName(secretName: string) {
+  if (!secretNameRegex.test(secretName)) {
+    console.error(
+      `Invalid secret name: ${secretName}. Secret names must be uppercased and may only contain letters, numbers and underscores`,
+    );
+  }
+}
+
 export async function trigger(props: DopplerImport) {
   const { secretName, secretValue } = props;
+  validateSecretName(secretName);
   const resolvedKey = await fetchKeyInfo();
   const secrets = [{ name: secretName, value: secretValue }];
   const payload = utils.createPayload(secrets);
