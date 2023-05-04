@@ -1,4 +1,4 @@
-import { DopplerImport, trigger, fetchKeyInfo } from "@dopplerhq/universal-import-core";
+import { DopplerImport, trigger, fetchKeyInfo, validateSecretName } from "@dopplerhq/universal-import-core";
 import Logo from "./assets/Logo";
 import ImportSVG from "./assets/ImportText";
 import ButtonStyles from "./assets/ButtonStyles";
@@ -10,6 +10,8 @@ interface DopplerImportButtonProps extends DopplerImport {
 }
 
 export function DopplerImportButton(props: DopplerImportButtonProps) {
+  validateSecretName(props.secretName);
+
   async function onClick() {
     await trigger(props);
   }
