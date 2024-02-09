@@ -19,7 +19,7 @@ export default function ButtonStyles(props: ButtonStylesProps) {
         height: ${props.height}px;
         font-weight: 700;
         color: #fff;
-        border-radius: ${props.height / 9}px;
+        border-radius: 8px;
         cursor: pointer;
         overflow: hidden;
         padding: 0 ${props.height / 4}px;
@@ -34,7 +34,7 @@ export default function ButtonStyles(props: ButtonStylesProps) {
         width: 100%;
         height: 100%;
         opacity: 1;
-        background: linear-gradient(216.71deg, #4F80FF 6.72%, #7A4BFF 91.2%);
+        background: linear-gradient(90deg, #6B13F5 0%, #440C9D 100%);
         transition: all .2s ease-in-out;
       }
 
@@ -47,7 +47,7 @@ export default function ButtonStyles(props: ButtonStylesProps) {
         min-height: 100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(216.71deg, #2375F3 6.72%, #7C1FF4 91.2%);
+        background: linear-gradient(90deg, #440C9D 0%, #21064C 100%);
         transition: all .2s ease-in-out;
       }
 

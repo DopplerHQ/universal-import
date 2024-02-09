@@ -4,7 +4,7 @@
 
 <div align="center">
     <a href="https://doppler.com?utm_campaign=github_repo&utm_medium=referral&utm_content=universal-import&utm_source=github">
-        <img src="https://user-images.githubusercontent.com/2602652/202788801-0ed64dce-b645-4877-b748-6189186062cd.png" width="260" alt="Doppler">
+        <img src="https://dashboard.doppler.com/imgs/logo-long.svg" width="260" alt="Doppler">
     </a>
 </div>
 
